@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AgentReflex — App Map & Architecture</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 2rem; }
+    h1 { color: #38bdf8; }
+    .box { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .tag { background: #0284c7; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; }
+    code { font-family: monospace; background: #0b1120; padding: 0.2rem 0.4rem; border-radius: 4px; color: #a5f3fc; }
+  </style>
+</head>
+<body>
+  <h1>⚡ AgentReflex Architecture & App Map</h1>
+  <div class="box">
+    <h2>1. Presentation Layer (UI)</h2>
+    <p><code>index.html</code> + <code>styles.css</code></p>
+    <p>Split-pane developer workbench with live animated score meter, preset selectors, and dark mode interface.</p>
+  </div>
+  <div class="box">
+    <h2>2. Heuristic Diagnostic Engine</h2>
+    <p><code>app.js > runAudit()</code></p>
+    <p>Inspects feature prompts across 4 dimensions: Error Boundaries, Data/Schema, Security, and Acceptance Testing.</p>
+  </div>
+  <div class="box">
+    <h2>3. Bulletproof Prompt Generator</h2>
+    <p><code>app.js > generateOptimizedPrompt()</code></p>
+    <p>Produces structured prompts with explicit Role, Goal, Constraints, and Verification Steps for coding agents.</p>
+  </div>
+</body>
+</html>

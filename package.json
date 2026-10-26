@@ -1,0 +1,11 @@
+{
+  "name": "agent-reflex",
+  "version": "1.0.0",
+  "description": "Interactive prompt and spec diagnostic workbench for coding agents",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["ai", "agents", "prompt-engineering", "diagnostics", "devpost"],
+  "author": "Learner",
+  "license": "MIT"
+}

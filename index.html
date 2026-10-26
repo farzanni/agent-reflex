@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentReflex — Prompt & Spec Diagnostic Workbench</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">⚡</div>
+        <div class="brand-info">
+          <h1>AgentReflex</h1>
+          <span class="badge">AI Agent Diagnostic</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="status-indicator"><span class="dot"></span> Engine Online</span>
+        <a href="#about" class="btn btn-secondary btn-sm" id="about-btn">About PoC</a>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="workspace-grid">
+      <!-- Left: Prompt Editor & Presets -->
+      <section class="panel editor-panel">
+        <div class="panel-header">
+          <h2>Agent Feature Request / Prompt</h2>
+          <div class="char-count" id="char-count">0 characters</div>
+        </div>
+
+        <div class="preset-bar">
+          <span class="preset-label">Presets:</span>
+          <button class="preset-chip active" data-preset="auth">Auth System (Vague)</button>
+          <button class="preset-chip" data-preset="webhook">Payment Webhook</button>
+          <button class="preset-chip" data-preset="scraper">Data Extraction</button>
+        </div>
+
+        <div class="editor-wrapper">
+          <textarea id="prompt-input" placeholder="Type or paste your feature request for a coding agent here... (e.g., 'Build an auth system with email login and password reset')"></textarea>
+        </div>
+
+        <div class="panel-actions">
+          <button id="clear-btn" class="btn btn-outline">Clear</button>
+          <button id="audit-btn" class="btn btn-primary">
+            <span class="icon">🔍</span> Reflex Audit
+          </button>
+        </div>
+      </section>
+
+      <!-- Right: Diagnostic Radar & Optimized Prompt -->
+      <section class="panel results-panel">
+        <div class="panel-header">
+          <h2>Diagnostic Radar</h2>
+          <div class="score-badge" id="score-badge">Audited: Ready</div>
+        </div>
+
+        <div class="diagnostic-summary">
+          <div class="score-card">
+            <div class="score-ring">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path id="circle-progress" class="circle-progress" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <div class="score-text">
+                <span id="score-val">--</span>
+                <span class="score-label">Clarity</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="radar-metrics">
+            <div class="metric-row">
+              <span class="metric-name">Boundaries & Errors:</span>
+              <div class="progress-bar"><div class="progress-fill" id="metric-boundaries" style="width: 0%"></div></div>
+            </div>
+            <div class="metric-row">
+              <span class="metric-name">Data & Schema:</span>
+              <div class="progress-bar"><div class="progress-fill" id="metric-schema" style="width: 0%"></div></div>
+            </div>
+            <div class="metric-row">
+              <span class="metric-name">Security & Auth:</span>
+              <div class="progress-bar"><div class="progress-fill" id="metric-security" style="width: 0%"></div></div>
+            </div>
+            <div class="metric-row">
+              <span class="metric-name">Test Acceptance:</span>
+              <div class="progress-bar"><div class="progress-fill" id="metric-testability" style="width: 0%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Risk Feed -->
+        <div class="risk-section">
+          <h3>Agent Hallucination & Failure Risks</h3>
+          <div class="risk-list" id="risk-list">
+            <div class="empty-state">Run an audit to view potential agent traps.</div>
+          </div>
+        </div>
+
+        <!-- Optimized Prompt Refactor -->
+        <div class="refactor-section">
+          <div class="refactor-header">
+            <h3>Bulletproof Agent Spec (Optimized)</h3>
+            <button id="copy-btn" class="btn btn-secondary btn-sm">📋 Copy Prompt</button>
+          </div>
+          <pre class="refactor-preview" id="refactor-preview">Click "Reflex Audit" to generate an optimized prompt.</pre>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Copied to clipboard!</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
